@@ -1,7 +1,7 @@
 (= (map $f Nil)
    Nil)
-(= (map $f (:: $x $xs))
-   (:: ($f $x)
+(= (map $f (cons $x $xs))
+   (cons ($f $x)
        (map $f $xs)))
 
 (= (square $x)
@@ -10,4 +10,4 @@
 !(map square Nil)
 
 !(map square
-   (:: 1 (:: 2 (:: 3 Nil))))
+   (cons 1 (cons 2 (cons 3 Nil))))

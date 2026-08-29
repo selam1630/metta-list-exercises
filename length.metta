@@ -1,9 +1,9 @@
 ; An empty list has length 0.
 (= (length Nil)
    0)
-(= (length (:: $x $xs))
+(= (length (cons $x $xs))
    (+ 1 (length $xs)))
 
 !(length Nil)
 
-!(length (:: A (:: B (:: C Nil))))
+!(length (cons A (cons B (cons C Nil))))

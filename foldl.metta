@@ -1,7 +1,7 @@
 (= (foldl $f $acc Nil)
    $acc)
 
-(= (foldl $f $acc (:: $x $xs))
+(= (foldl $f $acc (cons $x $xs))
    (foldl $f ($f $acc $x) $xs))
 
 (= (add $x $y)
@@ -16,8 +16,8 @@
 
 !(foldl add
          0
-         (:: 1 (:: 2 (:: 3 Nil))))
+         (cons 1 (cons 2 (cons 3 Nil))))
 
 !(foldl multiply
          1
-         (:: 2 (:: 3 (:: 4 Nil))))
+         (cons 2 (cons 3 (cons 4 Nil))))

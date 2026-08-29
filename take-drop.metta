@@ -2,9 +2,9 @@
    Nil)
 (= (take $n Nil)
    Nil)
-(= (take $n (:: $x $xs))
+(= (take $n (cons $x $xs))
    (if (> $n 0)
-       (:: $x (take (- $n 1) $xs))
+       (cons $x (take (- $n 1) $xs))
        Nil))
 
 (= (drop 0 $list)
@@ -13,17 +13,17 @@
 (= (drop $n Nil)
    Nil)
 
-(= (drop $n (:: $x $xs))
+(= (drop $n (cons $x $xs))
    (if (> $n 0)
        (drop (- $n 1) $xs)
-       (:: $x $xs)))
+       (cons $x $xs)))
 
 (= (numbers)
-   (:: 1
-       (:: 2
-           (:: 3
-               (:: 4
-                   (:: 5 Nil))))))
+   (cons 1
+       (cons 2
+           (cons 3
+               (cons 4
+                   (cons 5 Nil))))))
 
 !(take 0 (numbers))
 
